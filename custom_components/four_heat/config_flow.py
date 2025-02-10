@@ -36,11 +36,14 @@ class FourHeatLocalConfiGFlow(config_entries.ConfigFlow, domain=DOMAIN):
         await self.step_complete_config()
 
     async def step_complete_config(self, user_input: dict | None = None) -> FlowResult:
-        _LOGGER.error(30)
+        _LOGGER.error("step_complete_config")
         fields = {}
+
+        _LOGGER.error(self._user_inputs)
         for i, config in enumerate(self._user_inputs["config"].items()):
             fields[vol.Required(f"config_{i}")] = str
         
+        _LOGGER.error(fields)
         config_form = vol.Schema(fields)
         if user_input is None:
-            return self.async_show_form(step_id="user", data_schema=config_form)
+            return self.async_show_form(step_id="complete_config", data_schema=config_form)

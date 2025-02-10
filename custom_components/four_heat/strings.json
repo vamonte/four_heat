@@ -14,6 +14,15 @@
                     "name": "Ip de votre boitier 4heat",
                     "port": "Port de votre boitier 4heat"
                 }
+            },
+            "complete_config": {
+                "title": "Vos infos de connexion",
+                "description": "Donnez vos infos de connexion",
+                "data": {
+                },
+                "data_description": {
+                    
+                }
             }
         }
     }
