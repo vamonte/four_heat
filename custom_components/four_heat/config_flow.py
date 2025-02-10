@@ -22,12 +22,17 @@ class FourHeatLocalConfiGFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
         if user_input is None:
             return self.async_show_form(step_id="user", data_schema=user_form)
-        
+        _LOGGER.error(20)
         self._user_inputs.update(user_input)
+        _LOGGER.error(30)
         tcp_client = TCPClient(user_input["ip"], user_input["port"])
+        _LOGGER.error(40)
         stove = Stove(tcp_client)
+        _LOGGER.error(50)
         await stove.init_config()
+        _LOGGER.error(stove.config)
         self._user_inputs.update({"config": stove.config})
+        _LOGGER.error(self._user_inputs)
         await self.step_complete_config()
 
     async def step_complete_config(self, user_input: dict | None = None) -> FlowResult:
