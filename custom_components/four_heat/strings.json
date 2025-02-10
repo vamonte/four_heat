@@ -1,0 +1,20 @@
+{
+    "title": "four_heat",
+    "config": {
+        "flow_title": "Ajout d'un nouveau poele",
+        "step": {
+            "user": {
+                "title": "Vos infos de connexion",
+                "description": "Donnez vos infos de connexion",
+                "data": {
+                    "ip": "Adresse IP",
+                    "port": "Port"
+                },
+                "data_description": {
+                    "name": "Ip de votre boitier 4heat",
+                    "port": "Port de votre boitier 4heat"
+                }
+            }
+        }
+    }
+}
