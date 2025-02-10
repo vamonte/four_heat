@@ -2,6 +2,7 @@ import logging
 import voluptuous as vol
 from homeassistant.data_entry_flow import FlowResult
 from homeassistant import config_entries
+from homeassistant import data_entry_flow
 from .const import DOMAIN
 from .tcp import TCPClient
 from .stove import Stove
@@ -35,7 +36,7 @@ class FourHeatLocalConfiGFlow(config_entries.ConfigFlow, domain=DOMAIN):
         _LOGGER.error(self._user_inputs)
         await self.step_complete_config()
 
-    async def step_complete_config(self, user_input: dict | None = None) -> FlowResult:
+    async def async_step_complete_config(self, user_input: dict | None = None) -> FlowResult:
         _LOGGER.error("step_complete_config")
         fields = {}
 
