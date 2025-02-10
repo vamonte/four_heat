@@ -19,9 +19,10 @@
                 "title": "Vos infos de connexion",
                 "description": "Donnez vos infos de connexion",
                 "data": {
+                    "conf": "conf"
                 },
                 "data_description": {
-                    
+                    "conf": "conf"
                 }
             }
         }

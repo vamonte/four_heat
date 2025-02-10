@@ -41,7 +41,8 @@ class FourHeatLocalConfiGFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
         _LOGGER.error(self._user_inputs)
         for i, config in enumerate(self._user_inputs["config"].items()):
-            fields[vol.Required(f"config_{i}")] = str
+            pass
+        fields[vol.Required(f"conf")] = str
         
         _LOGGER.error(fields)
         config_form = vol.Schema(fields)
